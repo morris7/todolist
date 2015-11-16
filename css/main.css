@@ -179,3 +179,9 @@ ol {
 ol ol {
     margin: 0 0 0 2em; /* Add some left margin for inner lists */
 }
+
+#todoList input#newtask, #todoList input#taskdate {
+    float:left;
+    width: 40%;
+}
+
