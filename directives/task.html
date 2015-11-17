@@ -1,1 +1,6 @@
-<li class="task"><a href="#">{{task.name}}: to complete by {{task.date | date: "dd-MM-yyyy"}}</a></li>
+<li class="task">
+    <a href="#" ng-class="task.complete == true ? 'strike' : 'nostrike'">
+        {{task.name}} (to complete by {{task.date | date: "dd-MM-yyyy"}})
+        <input type="checkbox" name="todoCheckbox" class="todoCheckbox" value="complete" ng-model="task.complete" />
+    </a>
+</li>

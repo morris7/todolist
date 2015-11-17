@@ -143,7 +143,7 @@
     left: -2.5em;
     top: 50%;
     margin-top: -1em;
-    background: #fa8072;
+    background: #fac451;
     height: 2em;
     width: 2em;
     line-height: 2em;
@@ -163,7 +163,7 @@
 
 .rectangle-list a:hover:after{
     left: -.5em;
-    border-left-color: #fa8072;
+    border-left-color: #fac451
 }
 
 ol {
@@ -183,5 +183,19 @@ ol ol {
 #todoList input#newtask, #todoList input#taskdate {
     float:left;
     width: 40%;
+}
+
+.todoCheckbox {
+    float:right;
+}
+
+li.task .strike{
+    text-decoration: line-through;
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(50%);
+}
+
+.right{
+    float:right;
 }
 

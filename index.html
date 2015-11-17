@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>To Do List</title>
 
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
     <link href='css/main.css' rel='stylesheet' type='text/css'>
@@ -20,7 +21,7 @@
             <input type="text" ng-model="task.name" name="newtask" id="newtask" placeholder="task..." />
             <input type="date" ng-model="task.date" name="taskdate" id="taskdate"  />
             <div class="button-section">
-                <button id="submittask" type="button" ng-click="update(task)">+</button>
+                <button id="submittask" type="button" ng-click="update(task)" class="right">+</button>
             </div>
         </form>
     </section>

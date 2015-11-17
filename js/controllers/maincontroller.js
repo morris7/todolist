@@ -6,7 +6,8 @@ app.controller('MainController', ['$scope', function($scope) {
 
     $scope.task = {
         name: '',
-        date: ''
+        date: '',
+        complete: false
     };
 
     $scope.tasks = [];
@@ -14,6 +15,8 @@ app.controller('MainController', ['$scope', function($scope) {
     $scope.update = function(task) {
 
         $scope.tasks.push(angular.copy(task));
+        $scope.task.name = null;
+        $scope.task.date = null;
 
     };
 
