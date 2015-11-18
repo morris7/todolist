@@ -11,10 +11,20 @@ app.controller('MainController', ['$scope', function($scope) {
     };
 
     $scope.tasks = [];
+    $scope.completedTasks = [];
+    $scope.displayTasks = [];
+    $scope.displayCompletedTasks = [];
 
     $scope.update = function(task) {
 
         $scope.tasks.push(angular.copy(task));
+        $scope.formReset();
+
+    };
+
+    $scope.formReset = function() {
+
+        $scope.form.$setUntouched();
         $scope.task.name = null;
         $scope.task.date = null;
 

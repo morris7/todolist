@@ -5,6 +5,7 @@
     <title>To Do List</title>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
     <link href='css/main.css' rel='stylesheet' type='text/css'>
@@ -14,14 +15,32 @@
         <h1>To do list:</h1>
     </header>
     <section>
+        <div>Tasks:</div>
+        <hr />
         <ol class="tasks rectangle-list">
-            <todo ng-repeat="task in tasks"></todo>
+            <todo ng-repeat="task in tasks | filter:{complete: false}"></todo>
         </ol>
-        <form action="#" method="post">
-            <input type="text" ng-model="task.name" name="newtask" id="newtask" placeholder="task..." />
-            <input type="date" ng-model="task.date" name="taskdate" id="taskdate"  />
-            <div class="button-section">
-                <button id="submittask" type="button" ng-click="update(task)" class="right">+</button>
+        <div>Completed:</div>
+        <hr />
+        <ol class="completedTasks rectangle-list">
+            <todo ng-repeat="task in tasks | filter:{complete: true}"></todo>
+        </ol>
+        <form action="#" method="post" name="form" novalidate>
+            <div class="formInputs">
+                <input type="text" ng-model="task.name" name="newtask" id="newtask" placeholder="task..." required/>
+                <input type="date" ng-model="task.date" name="taskdate" id="taskdate" required />
+                <div class="button-section">
+                    <button id="submittask" type="button" ng-click="update(task)" class="right"
+                            ng-disabled="form.$invalid">+</button>
+                </div>
+            </div>
+            <div class="formErrors">
+                <div ng-show="form.$submitted || form.newtask.$touched">
+                    <span ng-show="form.newtask.$error.required">Please enter a task.</span>
+                </div>
+                <div ng-show="form.$submitted || form.taskdate.$touched">
+                    <span ng-show="form.taskdate.$error.required">Please enter a date.</span>
+                </div>
             </div>
         </form>
     </section>

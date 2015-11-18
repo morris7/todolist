@@ -183,19 +183,67 @@ ol ol {
 #todoList input#newtask, #todoList input#taskdate {
     float:left;
     width: 40%;
+    height: 36px;
+    /*margin-bottom: 5px;*/
+}
+
+#todoList input#newtask{
+    margin-right:5px;
 }
 
 .todoCheckbox {
     float:right;
 }
 
-li.task .strike{
-    text-decoration: line-through;
-    -webkit-filter: grayscale(60%);
-    filter: grayscale(50%);
+.left{
+    float:left;
 }
 
 .right{
     float:right;
 }
 
+li.task .strike{
+    text-decoration: line-through;!important;
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(50%);
+}
+
+.taskText{
+    float: left;
+    width: 75%;
+}
+
+
+.taskDate{
+    color: #808080;
+}
+
+#todoList form input.ng-touched.ng-invalid{
+    border-color: #ff848a;
+}
+
+#todoList  {
+    font: 13px Arial, Helvetica, sans-serif;
+    color: #888;
+}
+
+.formErrors{
+    float:left;
+    margin-top:5px;
+    width:100%;
+}
+
+.formErrors div{
+    width:42%;
+    float:left;
+}
+
+.formInputs{
+    float:left;
+    width:100%
+}
+
+button:disabled{
+
+}
