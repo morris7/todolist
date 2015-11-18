@@ -18,7 +18,8 @@
         <div>Tasks:</div>
         <hr />
         <ol class="tasks rectangle-list">
-            <todo ng-repeat="task in tasks | filter:{complete: false}"></todo>
+            <todo ng-repeat="task in tasks | filter:{complete: false} as results"></todo>
+            <li ng-if="!results.length">Hooray! You have no tasks to work on!</li>
         </ol>
         <div>Completed:</div>
         <hr />
