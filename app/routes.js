@@ -41,6 +41,19 @@ module.exports = function(app) {
 
     });
 
+    app.get('/api/todos:todo_id', function (req, res) {
+
+        // use mongoose to get all todos in the database
+        Todo.find(function (err, todos) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(todos); // return all todos in JSON format
+        });
+    });
+
     // delete a todo
     app.delete('/api/todos/:todo_id', function (req, res) {
         Todo.remove({

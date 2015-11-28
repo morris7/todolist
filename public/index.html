@@ -31,7 +31,7 @@
                 <input type="text" ng-model="task.name" name="newtask" id="newtask" placeholder="task..." required/>
                 <input type="date" ng-model="task.date" name="taskdate" id="taskdate" required />
                 <div class="button-section">
-                    <button id="submittask" type="button" ng-click="update(task)" class="right"
+                    <button id="submittask" type="button" ng-click="createTodo(task)" class="right"
                             ng-disabled="form.$invalid">+</button>
                 </div>
             </div>
